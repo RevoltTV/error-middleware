@@ -18,6 +18,11 @@ export default (config = {}) => {
             error.stack = err.stack;
         }
 
-        return res.status(err.status || 500).json(error);
+        let status = err.status || 500;
+        if (err instanceof TypeError) {
+            status = 400;
+        }
+
+        return res.status(status).json(error);
     };
 };

@@ -41,6 +41,15 @@ describe('not-found', () => {
         expect(error.fields).to.not.exist;
     });
 
+    it('should return a 400 on a TypeError', () => {
+        let err = new TypeError('typeerror');
+        let middleware = serverError();
+
+        middleware(err, {}, res, sinon.spy());
+
+        expect(res.status).to.have.been.calledWith(400);
+    });
+
     it('should set response status if Error object contains status property', () => {
         let err = new Error('test error');
         err.status = 400;

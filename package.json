@@ -1,6 +1,6 @@
 {
   "name": "@revolttv/error-middleware",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Middleware to handle exceptions and return error responses",
   "main": "lib/index.js",
   "jsnext:main": "src/index",

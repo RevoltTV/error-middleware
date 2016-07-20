@@ -2,7 +2,7 @@ import _      from 'lodash';
 import logger from 'winston';
 
 export default (config = {}) => {
-    return (err, req, res, next) => { // eslint-disable-line no-unused-vars
+    function errorHandler(err, req, res, next) { // eslint-disable-line no-unused-vars
         logger[err.level || 'error'](err);
 
         let error = {
@@ -24,5 +24,7 @@ export default (config = {}) => {
         }
 
         return res.status(status).json(error);
-    };
+    }
+
+    return errorHandler;
 };

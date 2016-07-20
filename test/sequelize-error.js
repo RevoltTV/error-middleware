@@ -13,6 +13,12 @@ import sequelizeError from '../src/sequelize-error';
 chai.use(sinonChai);
 
 describe('sequelize-error', () => {
+    it('should expose function name for middleware', () => {
+        let middleware = sequelizeError();
+
+        expect(middleware.name).to.equal('sequelizeErrorHandler');
+    });
+
     it('should call next() with ConflictError if it encounters a UniqueConstraintError', () => {
         let next = sinon.spy();
 

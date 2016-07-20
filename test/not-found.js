@@ -9,6 +9,12 @@ import notFound from '../src/not-found';
 chai.use(sinonChai);
 
 describe('not-found', () => {
+    it('should expose function name for middleware', () => {
+        let middleware = notFound();
+
+        expect(middleware.name).to.equal('notFoundHandler');
+    });
+
     it('should call next() with NotFoundError if the route is not found', () => {
         let next = sinon.spy();
         let middleware = notFound();

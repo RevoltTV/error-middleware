@@ -25,6 +25,12 @@ describe('not-found', () => {
         };
     });
 
+    it('should expose function name for middleware', () => {
+        let middleware = serverError();
+
+        expect(middleware.name).to.equal('errorHandler');
+    });
+
     it('should return a 500 on arbitrary error', () => {
         let err = new Error('test error');
         let middleware = serverError();

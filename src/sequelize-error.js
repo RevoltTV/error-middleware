@@ -9,7 +9,7 @@ import {
 } from 'sequelize';
 
 export default () => {
-    return (err, req, res, next) => {
+    function sequelizeErrorHandler(err, req, res, next) {
         if (err instanceof ValidationError) {
             let message = `${err.message}: ${_.map(err.errors, 'message').join(', ')}`;
             let fields = _.map(err.errors, 'path');
@@ -22,5 +22,7 @@ export default () => {
         }
 
         return next(err);
-    };
+    }
+
+    return sequelizeErrorHandler;
 };

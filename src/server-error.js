@@ -10,8 +10,12 @@ export default (config = {}) => {
             message: err.message || 'Internal Server Error'
         };
 
-        if (_.size(err.fields) > 0) {
+        if (_.size(err.fields)) {
             error.fields = err.fields;
+        }
+
+        if (_.size(err.details)) {
+            error.details = err.details;
         }
 
         if (config.env !== 'production') {

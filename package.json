@@ -36,10 +36,10 @@
     "chai": "^3.5.0",
     "cross-env": "^2.0.0",
     "eslint": "^3.0.1",
-    "eslint-config-revolt": "^0.1.6",
-    "eslint-plugin-react": "^5.2.2",
+    "eslint-config-revolt": "^1.2.1",
+    "eslint-plugin-react": "^7.5.1",
     "mocha": "^2.5.3",
-    "sequelize": "^3.23.4",
+    "sequelize": "^4.27.0",
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0"
   },
@@ -49,7 +49,7 @@
     "winston": "^2.2.0"
   },
   "peerDependencies": {
-    "sequelize": "^3.23.4"
+    "sequelize": "^3.23.4 || ^4.0.0"
   },
   "babel": {
     "presets": [

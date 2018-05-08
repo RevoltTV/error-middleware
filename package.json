@@ -1,6 +1,6 @@
 {
     "name": "@revolttv/error-middleware",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "description": "Middleware to handle exceptions and return error responses",
     "main": "lib/index.js",
     "jsnext:main": "src/index",
@@ -21,7 +21,11 @@
         "url": "https://github.com/RevoltTV/error-middleware/issues"
     },
     "homepage": "https://github.com/RevoltTV/error-middleware#readme",
-    "files": ["lib", "src", "test"],
+    "files": [
+        "lib",
+        "src",
+        "test"
+    ],
     "devDependencies": {
         "babel-cli": "^6.10.1",
         "babel-core": "^6.26.3",
@@ -48,7 +52,12 @@
         "sequelize": "^3.23.4 || ^4.0.0"
     },
     "babel": {
-        "presets": ["es2015", "stage-0"],
-        "plugins": ["add-module-exports"]
+        "presets": [
+            "es2015",
+            "stage-0"
+        ],
+        "plugins": [
+            "add-module-exports"
+        ]
     }
 }
